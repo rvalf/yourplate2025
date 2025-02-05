@@ -13,10 +13,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Test UI Routes
+Route::get('/login', function () {
+    return view('login/login');
+});
+
+Route::get('/register', function () {
+    return view('login/register');
+});
+
+Route::get('/', function () {
+    return view('buyer/home');
+});

@@ -29,3 +29,14 @@ Route::get('/register', function () {
 Route::get('/', function () {
     return view('buyer/home');
 });
+
+Route::get('/Dashboard', function (){
+    return view('admin/dashboard');
+});
+
+Route::get('/Meal', function (){
+    return view('meal/index');
+});
+Route::get('/Meal/Create', function (){
+    return view('meal/create');
+});

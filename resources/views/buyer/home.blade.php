@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div>
+<div style="padding-top: 5rem">
     <section id="landing">
         <div class="row ps-5 mb-0">
             <div class="col-sm-1 pt-3">
@@ -28,7 +28,7 @@
             <div class="px-5 mx-5">
                 <div class="row d-flex justify-content-center align-items-center pt-2">
                     <div class="col-sm-4">
-                        <h1 class="font-itim fw-bold mb-4" style="color: #FF5E00">Special Menu <br> Option</h1>
+                        <h1 class="font-itim fw-bold mb-4" style="color: #FF5E00">Special Menu Option</h1>
                         <p class="fw-light pe-3 mb-5">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.
                         </p>
@@ -37,110 +37,196 @@
                         </div>
                     </div>
                     <div class="col-sm-8 p-4">
-                        <div class="row g-4 d-flex justify-content-center">
+                        <div class="row g-3 d-flex justify-content-center">
                             <div class="col-sm-6">
                                 <div class="card card-product shadow-sm">
-                                    <div class="card-body">
-                                        <div class="row d-0">
-                                            <div class="col-sm-4">
-                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
-                                                    style="width: 100%;">
-                                            </div>
-                                            <div class="col-sm-8 ps-0">
-                                                <h5 class="card-title">Chicken Leg</h5>
-                                                <p class="mb-0">Zakia Amalia</p>
-                                                <p class="mb-0">SBH-29</p>
-                                            </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="ps-1" style="width: 70%">
+                                            <p class="mb-0">Chicken Leg</p>
+                                            <p style="font-size: 9pt; margin: 0;">Zakia Amalia</p>
+                                            <p style="font-size: 9pt; margin: 0;">Cikarang Selatan | SBH-29</p>
+                                        </div>
+                                        <div class="text-end" style="width: 30%">
+                                            <img src="{{ asset('images/img-resep-ayam.png') }}" style="width: 70%">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card card-product shadow-sm">
-                                    <div class="card-body">
-                                        <div class="row d-0">
-                                            <div class="col-sm-4">
-                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
-                                                    style="width: 100%;">
-                                            </div>
-                                            <div class="col-sm-8 ps-0">
-                                                <h5 class="card-title">Chicken Leg</h5>
-                                                <p class="mb-0">Zakia Amalia</p>
-                                                <p class="mb-0">SBH-29</p>
-                                            </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="ps-1" style="width: 70%">
+                                            <p class="mb-0">Chicken Leg</p>
+                                            <p style="font-size: 9pt; margin: 0;">Zakia Amalia</p>
+                                            <p style="font-size: 9pt; margin: 0;">Cikarang Selatan | SBH-29</p>
+                                        </div>
+                                        <div class="text-end" style="width: 30%">
+                                            <img src="{{ asset('images/img-resep-ayam.png') }}" style="width: 70%">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card card-product shadow-sm">
-                                    <div class="card-body">
-                                        <div class="row d-0">
-                                            <div class="col-sm-4">
-                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
-                                                    style="width: 100%;">
-                                            </div>
-                                            <div class="col-sm-8 ps-0">
-                                                <h5 class="card-title">Chicken Leg</h5>
-                                                <p class="mb-0">Zakia Amalia</p>
-                                                <p class="mb-0">SBH-29</p>
-                                            </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="ps-1" style="width: 70%">
+                                            <p class="mb-0">Chicken Leg</p>
+                                            <p style="font-size: 9pt; margin: 0;">Zakia Amalia</p>
+                                            <p style="font-size: 9pt; margin: 0;">Cikarang Selatan | SBH-29</p>
+                                        </div>
+                                        <div class="text-end" style="width: 30%">
+                                            <img src="{{ asset('images/img-resep-ayam.png') }}" style="width: 70%">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card card-product shadow-sm">
-                                    <div class="card-body">
-                                        <div class="row d-0">
-                                            <div class="col-sm-4">
-                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
-                                                    style="width: 100%;">
-                                            </div>
-                                            <div class="col-sm-8 ps-0">
-                                                <h5 class="card-title">Chicken Leg</h5>
-                                                <p class="mb-0">Zakia Amalia</p>
-                                                <p class="mb-0">SBH-29</p>
-                                            </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="ps-1" style="width: 70%">
+                                            <p class="mb-0">Chicken Leg</p>
+                                            <p style="font-size: 9pt; margin: 0;">Zakia Amalia</p>
+                                            <p style="font-size: 9pt; margin: 0;">Cikarang Selatan | SBH-29</p>
+                                        </div>
+                                        <div class="text-end" style="width: 30%">
+                                            <img src="{{ asset('images/img-resep-ayam.png') }}" style="width: 70%">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card card-product shadow-sm">
-                                    <div class="card-body">
-                                        <div class="row d-0">
-                                            <div class="col-sm-4">
-                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
-                                                    style="width: 100%;">
-                                            </div>
-                                            <div class="col-sm-8 ps-0">
-                                                <h5 class="card-title">Chicken Leg</h5>
-                                                <p class="mb-0">Zakia Amalia</p>
-                                                <p class="mb-0">SBH-29</p>
-                                            </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="ps-1" style="width: 70%">
+                                            <p class="mb-0">Chicken Leg</p>
+                                            <p style="font-size: 9pt; margin: 0;">Zakia Amalia</p>
+                                            <p style="font-size: 9pt; margin: 0;">Cikarang Selatan | SBH-29</p>
+                                        </div>
+                                        <div class="text-end" style="width: 30%">
+                                            <img src="{{ asset('images/img-resep-ayam.png') }}" style="width: 70%">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="card card-product shadow-sm">
-                                    <div class="card-body">
-                                        <div class="row d-0">
-                                            <div class="col-sm-4">
-                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
-                                                    style="width: 100%;">
-                                            </div>
-                                            <div class="col-sm-8 ps-0">
-                                                <h5 class="card-title">Chicken Leg</h5>
-                                                <p class="mb-0">Zakia Amalia</p>
-                                                <p class="mb-0">SBH-29</p>
-                                            </div>
+                                    <div class="card-body d-flex justify-content-between">
+                                        <div class="ps-1" style="width: 70%">
+                                            <p class="mb-0">Chicken Leg</p>
+                                            <p style="font-size: 9pt; margin: 0;">Zakia Amalia</p>
+                                            <p style="font-size: 9pt; margin: 0;">Cikarang Selatan | SBH-29</p>
+                                        </div>
+                                        <div class="text-end" style="width: 30%">
+                                            <img src="{{ asset('images/img-resep-ayam.png') }}" style="width: 70%">
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <!-- <div class="row g-4 d-flex justify-content-center">
+                            <div class="col-sm-6">
+                                <div class="card card-product shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row d-0">
+                                            <div class="col-sm-4">
+                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
+                                                    style="width: 100%;">
+                                            </div>
+                                            <div class="col-sm-8 ps-0">
+                                                <h5 class="card-title">Chicken Leg</h5>
+                                                <p class="mb-0">Zakia Amalia</p>
+                                                <p class="mb-0">SBH-29</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card card-product shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row d-0">
+                                            <div class="col-sm-4">
+                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
+                                                    style="width: 100%;">
+                                            </div>
+                                            <div class="col-sm-8 ps-0">
+                                                <h5 class="card-title">Chicken Leg</h5>
+                                                <p class="mb-0">Zakia Amalia</p>
+                                                <p class="mb-0">SBH-29</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card card-product shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row d-0">
+                                            <div class="col-sm-4">
+                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
+                                                    style="width: 100%;">
+                                            </div>
+                                            <div class="col-sm-8 ps-0">
+                                                <h5 class="card-title">Chicken Leg</h5>
+                                                <p class="mb-0">Zakia Amalia</p>
+                                                <p class="mb-0">SBH-29</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card card-product shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row d-0">
+                                            <div class="col-sm-4">
+                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
+                                                    style="width: 100%;">
+                                            </div>
+                                            <div class="col-sm-8 ps-0">
+                                                <h5 class="card-title">Chicken Leg</h5>
+                                                <p class="mb-0">Zakia Amalia</p>
+                                                <p class="mb-0">SBH-29</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card card-product shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row d-0">
+                                            <div class="col-sm-4">
+                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
+                                                    style="width: 100%;">
+                                            </div>
+                                            <div class="col-sm-8 ps-0">
+                                                <h5 class="card-title">Chicken Leg</h5>
+                                                <p class="mb-0">Zakia Amalia</p>
+                                                <p class="mb-0">SBH-29</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="card card-product shadow-sm">
+                                    <div class="card-body">
+                                        <div class="row d-0">
+                                            <div class="col-sm-4">
+                                                <img src="{{ asset('images/img-resep-ayam.png') }}"
+                                                    style="width: 100%;">
+                                            </div>
+                                            <div class="col-sm-8 ps-0">
+                                                <h5 class="card-title">Chicken Leg</h5>
+                                                <p class="mb-0">Zakia Amalia</p>
+                                                <p class="mb-0">SBH-29</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -152,7 +238,8 @@
             <img src="{{ asset('images/optimatch-logo.png') }}" style="width: 100%; z-index: 0; padding: 0 !important;">
             <p class="fw-light mt-4 mb-5">Optimatch is a fiture to lorem ipsum dolor sit amet, consectetur adipisicing.
             </p>
-            <div class="btn btn-primary mb-3"><img src="{{ asset('images/optimatch-logo-white.png') }}" style="width: 30%;">
+            <div class="btn btn-primary mb-3"><img src="{{ asset('images/optimatch-logo-white.png') }}"
+                    style="width: 30%;">
             </div>
         </div>
     </section>
@@ -265,6 +352,14 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+        </div>
+    </section>
+    <section id="footer">
+        <div class="p-4 d-flex justify-content-center align-items-center">
+            <p class="fw-light mb-0" style="margin-right: 50px;">Follow Us on Instagram<i class="bi bi-instagram ps-3" style="font-size: 10pt;"></i><span class="fw-normal ps-1">yourplate_id</span></p>
+            <img src="{{ asset('images/cdginnary-logo.png') }}" style="width: 2%">
+            <p class="fw-medium ps-2 mb-0">CDG INNARY</p>
+            <p class="fw-light ps-2 mb-0" style="font-size: 10pt;"><i class="bi bi-c-circle" style="font-size: 8pt;"></i> 2025</p>
         </div>
     </section>
 </div>

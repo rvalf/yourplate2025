@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Register Page</title>
+    <title>Seller Register Page</title>
 
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -26,7 +26,7 @@
         }
 
         .full-screen-bg {
-            background-color: #B14C42;
+            background-color: #701A12;
             height: 100vh;
             display: flex;
             justify-content: center;
@@ -44,7 +44,7 @@
         .col-left {
             justify-content: center;
             align-items: center;
-            color: #FFF3E0;
+            color: #FFFFFF;
         }
 
         .form-control {
@@ -57,7 +57,7 @@
 
         @media screen and (max-width: 768px) and (max-height: 900px) {
             .full-screen-bg {
-                min-height: 180vh;
+                min-height: 170vh;
                 width: 100%;
                 align-items: center;
                 justify-content: center;
@@ -93,9 +93,9 @@
             <div class="col-sm-5 col-12 d-flex justify-content-center align-items-center p-0">
                 <div class="col-left text-center">
                     <div class="text-desc">
-                        <p class="font-logo">YourPlate adalah solusi buat kamu yang sering bingung mau makan apa!
-                            Temukan inspirasi resep lezat dan jelajahi marketplace makanan, semua
-                            dalam satu tempat.</p>
+                        <p class="font-logo">YourPlate menjadi solusi untuk memasarkan produk-produk yang
+                            ingin kamu jual. Tersedia fitur Chat agar penjual mudah berinterkasi dengan
+                            pembeli. Daftarkan akun-mu dan mulai bisnis bersama YourPlate!</p>
                     </div>
                     <img src="{{ asset('images/img-logo-bg.png') }}" style="width: 100%; z-index: 0;">
                     <h1 class="font-logo pt-5">Your Plate</>
@@ -105,7 +105,7 @@
             <!-- Right Column: Login Form -->
             <div class="col-sm-7 col-12 d-flex align-items-center p-0 col-right">
                 <div class="login-container" style="width: 85%;">
-                    <h5 class="text-center" style="margin-top: 1rem;">Create Your Account</h5>
+                    <h5 class="text-center" style="margin-top: 1rem;">Start Your Business</h5>
                     <p class="text-center mb-4" style="font-size: 12pt">Please complete this field to join us!</p>
                     <form>
                         <div class="row">
@@ -138,14 +138,8 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-dark w-100 mb-3 mt-4 p-2">SIGN UP</button>
-                        <button type="submit" class="btn w-100">LOGIN HERE</button>
-                        <div class="form-group" style="margin-top: 1rem;">
-                            <p class="text-center" style="font-size: 11pt;">Kamu bisa bergabung sebagai seller, dan
-                                memasarkan produk di YourPlate!<br><a href="#"
-                                    class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Klik
-                                    disini untuk bergabung sebagai seller.</a></p>
-                        </div>
+                        <button type="submit" class="btn btn-dark w-100 mb-3 mt-4 p-2">CREATE SELLER ACCOUNT</button>
+                        <button type="submit" class="btn w-100">BACK</button>
                         <section id="footer">
                             <div class="p-4 d-flex justify-content-center align-items-center">
                                 <img src="{{ asset('images/cdginnary-logo.png') }}" style="width: 15px">

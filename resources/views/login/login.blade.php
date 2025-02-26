@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login Page</title>
-    
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    
+
     <!-- Font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,7 +37,7 @@
             width: 100vh;
             background-color: #FFF3E0;
             border-radius: 15px;
-            padding: 30px;
+            padding: 15px 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
@@ -57,7 +57,7 @@
 
         @media screen and (max-width: 768px) and (max-height: 900px) {
             .full-screen-bg {
-                min-height: 110vh;
+                min-height: 130vh;
                 width: 100%;
                 align-items: center;
                 justify-content: center;
@@ -121,6 +121,14 @@
                             </div>
                             <button type="submit" class="btn btn-dark w-100 mb-3">LOGIN</button>
                             <button type="submit" class="btn w-100">SIGN UP HERE</button>
+                            <section id="footer">
+                                <div class="p-4 d-flex justify-content-center align-items-center">
+                                    <img src="{{ asset('images/cdginnary-logo.png') }}" style="width: 15px">
+                                    <p class="fw-normal ps-2 mb-0" style="font-size: 8pt;">CDG INNARY</p>
+                                    <p class="fw-light ps-2 mb-0" style="font-size: 6pt;"><i class="bi bi-c-circle"
+                                            style="font-size: 4pt;"></i> 2025</p>
+                                </div>
+                            </section>
                         </form>
                 </div>
             </div>

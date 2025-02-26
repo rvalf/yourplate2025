@@ -26,9 +26,21 @@ Route::get('/register', function () {
     return view('login/register');
 });
 
+Route::get('/seller/register', function () {
+    return view('login/seller-register');
+});
+
+Route::get('/seller/activate', action: function () {
+    return view('login/seller-activate');
+});
+
 Route::get('/', function () {
     return view('buyer/home');
 });
+
+
+Route::get('/marketplace', function () {
+    return view('buyer/products');
 
 Route::get('/Dashboard', function (){
     return view('admin/dashboard');
@@ -39,4 +51,5 @@ Route::get('/Meal', function (){
 });
 Route::get('/Meal/Create', function (){
     return view('meal/create');
+
 });

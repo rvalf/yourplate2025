@@ -10,9 +10,11 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/coreui.bundle.min.js') }}"></script>
+    
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -58,7 +60,7 @@
             </div>
         </nav>
 
-        <main class="full-screen-bg" style="padding-top: 5rem">
+        <main class="full-screen-bg">
             @yield('content')
         </main>
     </div>

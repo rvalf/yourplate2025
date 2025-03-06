@@ -24,6 +24,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Itim&display=swap"
         rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
     <style>
         body,
@@ -102,7 +104,9 @@
                         <a class="nav-link text-white {{ Request::is('Dashboard*') ? 'active-menu' : '' }}" href="/Dashboard">Dashboard</a>
                     </li>
                     <li class="nav-item" style="font-size: 24px">
-                        <a class="nav-link text-white {{ Request::is('Meal*') ? 'active-menu' : '' }}" href="/Meal">Meal</a>
+                        <a href="{{ route('meal.index') }}" class="nav-link text-white {{ Request::is('meal*') ? 'active-menu' : '' }}">
+                            Meal
+                        </a>
                     </li>
                     <li class="nav-item" style="font-size: 24px">
                         <a class="nav-link text-white {{ Request::is('Profile*') ? 'active-menu' : '' }}" href="/Profile">Profile</a>

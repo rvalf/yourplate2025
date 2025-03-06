@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\MealController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,8 +22,17 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Test UI Routes
-Route::get('/login', function () {
-    return view('login/login');
+// Route::get('/login', function () {
+//     return view('login/login');
+// });
+
+Route::get('/login', action: [LoginController::class, 'showLogin'])->name('login');
+Route::post('/login', [LoginController::class, 'login'])->name('logins');
+// Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/login');
 });
 
 Route::get('/register', function () {
@@ -30,13 +43,13 @@ Route::get('/', function () {
     return view('buyer/home');
 });
 
-Route::get('/Dashboard', function (){
-    return view('admin/dashboard');
-});
+//Dashboard
+Route::get('/dashboard', action: [DashboardController::class, 'index'])->name('dashboard.index');
 
-Route::get('/Meal', function (){
-    return view('meal/index');
-});
-Route::get('/Meal/Create', function (){
-    return view('meal/create');
-});
+//Meal
+Route::get('/meal', action: [MealController::class, 'index'])->name('meal.index');
+Route::get('/meal/create', action: [MealController::class, 'create'])->name('meal.create');
+Route::post('/meal/create/store', action: [MealController::class, 'store'])->name('meal.store');
+Route::get('/meal/{id}/edit', [MealController::class, 'edit'])->name('meal.edit');
+Route::put('/meal/{id}', [MealController::class, 'update'])->name('meal.update');
+Route::delete('/meal/{id}', [MealController::class, 'destroy'])->name('meal.destroy');

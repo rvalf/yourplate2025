@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('prd_image');
             $table->datetime('prd_closed_po')->nullable();
             $table->decimal('prd_price', 15, 2);
+            $table->string('prd_usr_id_seller');
             $table->timestamps();
 
             $table->foreign('prd_usr_id_seller')->references('usr_id')->on('users');

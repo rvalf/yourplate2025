@@ -13,14 +13,41 @@ class User extends Authenticatable
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
+     * The primary key for the model.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'usr_id';
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * The data type of the primary key.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'usr_id',
+        'usr_email',
+        'usr_password',
+        'usr_fullname',
+        'usr_address',
+        'usr_dorm',
+        'usr_phone',
+        'usr_role',
+        'usr_seller_confirmed',
     ];
 
     /**
@@ -29,7 +56,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $hidden = [
-        'password',
+        'usr_password',
         'remember_token',
     ];
 
@@ -41,4 +68,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Override default password column
+     */
+    public function getAuthPassword()
+    {
+        return $this->usr_password;
+    }
 }

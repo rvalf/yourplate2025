@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('chats', function (Blueprint $table) {
             $table->uuid('chat_id')->primary();
+            $table->string(column: 'chat_usr_id_seller');
+            $table->string(column: 'chat_usr_id_buyer');
             $table->timestamps();
 
             $table->foreign('chat_usr_id_seller')->references('usr_id')->on('users');

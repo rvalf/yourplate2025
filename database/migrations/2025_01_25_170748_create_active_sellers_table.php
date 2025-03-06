@@ -17,6 +17,7 @@ return new class extends Migration
             $table->uuid('act_id')->primary();
             $table->string('act_image');
             $table->integer('act_approval');
+            $table->string(column: 'act_usr_id_seller');
             $table->timestamps();
 
             $table->foreign('act_usr_id_seller')->references('usr_id')->on('users');

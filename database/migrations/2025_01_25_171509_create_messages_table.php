@@ -17,6 +17,8 @@ return new class extends Migration {
             $table->string('msg_text');
             $table->uuid('msg_prd_id')->nullable();
             $table->foreign('msg_prd_id')->references('prd_id')->on('products');
+            $table->uuid(column: 'msg_chat_id');
+            $table->string(column: 'msg_usr_id_sender');
             $table->timestamps();
 
             $table->foreign('msg_chat_id')->references('chat_id')->on('chats');

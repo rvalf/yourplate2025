@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Login Page</title>
-    
+
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
-    
+
     <!-- Font Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -107,20 +107,39 @@
                 <div class="login-container w-75">
                     <h5 class="text-center mb-0" style="margin-top: 1rem;">Please Login</>
                         <h5 class="text-center" style="margin-bottom: 5rem;">To Your Account</h5>
-                        <form>
+                        @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul class="mb-0">
+                                @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                        @endif
+                        <form action="{{ route('logins') }}" method="POST">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="USERNAME" required>
+                                <input type="email" name="usr_email" class="form-control" placeholder="Email" required value="{{ old('usr_email') }}">
+                                @error('usr_email')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
+
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="PASSWORD" required>
+                                <input type="password" name="usr_password" class="form-control" placeholder="Password" required>
+                                @error('usr_password')
+                                <small class="text-danger">{{ $message }}</small>
+                                @enderror
                             </div>
-                            <div class="form-group" style="margin-bottom: 5rem;">
-                                <p class="text-end" style="font-size: 10pt;"><a href="#"
-                                        class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">forgot
-                                        password</a></p>
+                            <div class="form-group text-end" style="margin-bottom: 5rem;">
+                                <p style="font-size: 10pt;">
+                                    <a href="#" class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">
+                                        Forgot password?
+                                    </a>
+                                </p>
                             </div>
                             <button type="submit" class="btn btn-dark w-100 mb-3">LOGIN</button>
-                            <button type="submit" class="btn w-100">SIGN UP HERE</button>
+                            <button type="button" class="btn w-100">SIGN UP HERE</button>
                         </form>
                 </div>
             </div>

@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\LoginRequest;
+use App\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -25,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    // protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -36,5 +40,33 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
         $this->middleware('auth')->only('logout');
+    }
+
+    public function showLogin()
+    {
+        return view('login.login');
+    }
+
+    public function login(LoginRequest $request)
+    {
+        $credentials = $request->validate([
+            'usr_email' => 'required|email',
+            'usr_password' => 'required'
+        ]);
+
+        $user = User::where('usr_email', $credentials['usr_email'])->first();
+
+        if ($user) {
+            Auth::login($user);
+            return redirect()->route('dashboard.index'); // Redirect ke dashboard setelah login sukses
+        }
+
+        return back()->withErrors(['usr_email' => 'Email atau password salah.'])->withInput();
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/login');
     }
 }

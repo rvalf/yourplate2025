@@ -17,6 +17,8 @@ return new class extends Migration
             $table->uuid('rvw_id')->primary();
             $table->integer('rvw_rate');
             $table->string('rvw_desc');
+            $table->uuid('rvw_usr_id');
+            $table->string('rvw_prd_id');
             $table->timestamps();
 
             $table->foreign('rvw_usr_id')->references('usr_id')->on('users');

@@ -51,6 +51,10 @@ Route::get('/', function () {
     return view('buyer/home');
 });
 
+Route::get('/marketplace', function () {
+    return view('buyer/products');
+});
+
 //Dashboard
 Route::get('/dashboard', action: [DashboardController::class, 'index'])->name('dashboard.index');
 

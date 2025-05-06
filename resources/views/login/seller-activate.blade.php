@@ -27,7 +27,7 @@
 
         .full-screen-bg {
             background-color: #701A12;
-            height: 100vh;
+            height: 130vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -115,18 +115,29 @@
                 <div class="login-container" style="width: 85%;">
                     <h5 class="text-center" style="margin-top: 1rem;">Congratulations!</h5>
                     <p class="text-center mb-4" style="font-size: 12pt">Your seller account's successfully created</p>
-                    <form>
-                        <p class="text-center px-5 mb-0">Untuk mengaktivasi akun-mu, lakukan pembayaran biaya administrasi akun ke nomor rekening berikut:</p>
+                    <form method="post" action="{{ url('/seller/activate') }}" enctype="multipart/form-data">
+                        @csrf
+                        <p class="text-center px-5 mb-0">Untuk menjual produk, Anda harus membayar <strong>Rp
+                                25.000</strong> dengan
+                            durasi tayang <strong>30 hari</strong> sejak pembayaran diterima, anda dapat melakukan
+                            pembayaran lagi dengan
+                            jumlah yang sama untuk memperpanjang durasi tayang.
+                        </p>
                         <div class="p-2 border border-dark border-1 rounded card-norek" style="margin: 25px 100px">
                             <h4 class="text-center">9925674567</h4>
                             <h6 class="text-center">Permata Bank a/n Bunga Aulia Risti</h6>
                         </div>
-                        <p class="text-center px-5">Kirim bukti pembayaran dan tunggu admin kami melakukan konfirmasi akun agar kamu bisa memulai bisnis-mu di YourPlate.</p>
+                        <p class="text-center px-5">Dengan melakukan transaksi ini, anda menyetujui syarat dan
+                            menyadari bahwa produk produk yang tidak diperpanjang akan secara otomatis tidak tayang setelah
+                            waktu tayang berakhir.
+                            Kirim bukti pembayaran dan tunggu admin kami melakukan konfirmasi
+                            akun agar kamu bisa memulai bisnis-mu di YourPlate.</p>
                         <div class="form-group input-group-sm w-50 m-auto">
-                            <input type="file" class="form-control" placeholder="FULLNAME" required>
+                            <input type="file" class="form-control" id="picture" name="picture" accept="image/*"
+                                required>
                         </div>
                         <button type="submit" class="btn btn-dark w-100 mb-3 mt-4 p-2">ACTIVATE</button>
-                        <button type="submit" class="btn w-100">LATER</button>
+                        <a href="/" class="btn w-100">LATER</a>
                         <section id="footer">
                             <div class="p-4 d-flex justify-content-center align-items-center">
                                 <img src="{{ asset('images/cdginnary-logo.png') }}" style="width: 15px">

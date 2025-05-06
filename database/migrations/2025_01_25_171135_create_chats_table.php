@@ -17,6 +17,9 @@ return new class extends Migration
             $table->uuid('chat_id')->primary();
             $table->timestamps();
 
+            $table->string('chat_usr_id_seller');
+            $table->string('chat_usr_id_buyer');
+
             $table->foreign('chat_usr_id_seller')->references('usr_id')->on('users');
             $table->foreign('chat_usr_id_buyer')->references('usr_id')->on('users');
         });

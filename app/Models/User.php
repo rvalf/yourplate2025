@@ -12,15 +12,25 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
+    protected $primaryKey = 'usr_id';
+    public $incrementing = false;
+    protected $keyType = 'string';
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'usr_id',
+        'usr_email',
+        'usr_password',
+        'usr_fullname',
+        'usr_address',
+        'usr_phone',
+        'usr_dorm',
+        'usr_role',
+        'usr_seller_confirmed'
     ];
 
     /**
@@ -41,4 +51,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function latestActiveSeller()
+    {
+        return $this->hasOne(ActiveSeller::class, 'act_usr_id_seller', 'usr_id')->latestOfMany('updated_at');
+    }    
 }

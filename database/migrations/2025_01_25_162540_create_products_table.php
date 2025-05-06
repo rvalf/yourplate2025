@@ -23,6 +23,8 @@ return new class extends Migration
             $table->decimal('prd_price', 15, 2);
             $table->timestamps();
 
+            $table->string('prd_usr_id_seller');
+
             $table->foreign('prd_usr_id_seller')->references('usr_id')->on('users');
         });
     }

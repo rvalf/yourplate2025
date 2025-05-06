@@ -93,9 +93,7 @@
             <div class="col-sm-5 col-12 d-flex justify-content-center align-items-center p-0">
                 <div class="col-left text-center">
                     <div class="text-desc">
-                        <p class="font-logo">YourPlate adalah solusi buat kamu yang sering bingung mau makan apa!
-                            Temukan inspirasi resep lezat dan jelajahi marketplace makanan, semua
-                            dalam satu tempat.</p>
+                        <p class="font-logo">You are getting closer to the right track! Join Yourplate today and start your culinary journey!</p>
                     </div>
                     <img src="{{ asset('images/img-logo-bg.png') }}" style="width: 100%; z-index: 0;">
                     <h1 class="font-logo pt-5">Your Plate</>
@@ -107,42 +105,59 @@
                 <div class="login-container" style="width: 85%;">
                     <h5 class="text-center" style="margin-top: 1rem;">Create Your Account</h5>
                     <p class="text-center mb-4" style="font-size: 12pt">Please complete this field to join us!</p>
-                    <form>
+                    @if ($errors->any())
+                        <div style="color: red;">
+                            @foreach ($errors->all() as $error)
+                                <p class="text-center">{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    @endif
+                    <form action="{{ url('/register') }}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="FULLNAME" required>
+                                    <input type="text" class="form-control" placeholder="Fullname" id="fullname"
+                                        name="fullname" value="{{ old('fullname') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="E-MAIL" required>
+                                    <input type="email" class="form-control" placeholder="Email" id="email" name="email"
+                                    value="{{ old('email') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="PHONE NUMBER" required>
+                                    <input type="text" class="form-control" placeholder="Phone Number" id="phone"
+                                        name="phone" value="{{ old('phone') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="ADDRESS" required>
+                                    <input type="text" class="form-control" placeholder="Address" id="address"
+                                        name="address" value="{{ old('address') }}" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="USERNAME" required>
+                                    <input type="text" class="form-control" placeholder="Username" id="username"
+                                        name="username" value="{{ old('username') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="PASSWORD" required>
+                                    <input type="password" class="form-control" placeholder="Password" id="password"
+                                        name="password" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="RE-TYPE PASSWORD" required>
+                                    <input type="password" class="form-control" placeholder="Confirm Password"
+                                        id="password2" name="password2" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="DORMITORY ROOM" required>
+                                    <input type="text" class="form-control" placeholder="Dormitory Room (Optional)"
+                                        id="dorm" name="dorm" value="{{ old('dorm') }}">
                                 </div>
+                                <input type="hidden" class="form-control" id="role" name="role" value="3">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-dark w-100 mb-3 mt-4 p-2">SIGN UP</button>
-                        <button type="submit" class="btn w-100">LOGIN HERE</button>
+                        <a href="{{ url('/login') }}" type="submit" class="btn w-100">LOGIN HERE</a>
                         <div class="form-group" style="margin-top: 1rem;">
                             <p class="text-center" style="font-size: 11pt;">Kamu bisa bergabung sebagai seller, dan
-                                memasarkan produk di YourPlate!<br><a href="#"
+                                memasarkan produk di YourPlate!<br><a href="{{ url('/seller/register') }}"
                                     class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Klik
                                     disini untuk bergabung sebagai seller.</a></p>
                         </div>

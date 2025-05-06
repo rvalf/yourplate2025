@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('act_approval');
             $table->timestamps();
 
+            $table->string('act_usr_id_seller');
+
             $table->foreign('act_usr_id_seller')->references('usr_id')->on('users');
         });
     }

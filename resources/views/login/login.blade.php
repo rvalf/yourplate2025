@@ -93,9 +93,8 @@
             <div class="col-sm-7 col-12 d-flex justify-content-center align-items-center p-0">
                 <div class="col-left text-center">
                     <div class="text-desc">
-                        <p class="font-logo">YourPlate adalah solusi buat kamu yang sering bingung mau makan apa!
-                            Temukan inspirasi resep lezat dan jelajahi marketplace makanan, semua
-                            dalam satu tempat.</p>
+                        <p class="font-logo">You are in the right track! Let’s explore and find delicious inspiration
+                            for your plate.</p>
                     </div>
                     <img src="{{ asset('images/img-logo-bg.png') }}" style="width: 100%; z-index: 0;">
                     <h1 class="font-logo pt-5">Your Plate</>
@@ -106,21 +105,42 @@
             <div class="col-sm-5 col-12 d-flex align-items-center p-0 col-right">
                 <div class="login-container w-75">
                     <h5 class="text-center mb-0" style="margin-top: 1rem;">Please Login</>
-                        <h5 class="text-center" style="margin-bottom: 5rem;">To Your Account</h5>
-                        <form>
+                        <h5 class="text-center" style="margin-bottom: 3rem;">To Your Account</h5>
+                        @if (session('success'))
+                            <div style="color: green;">
+                                <p class="text-center">{{ session('success') }}</p>
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            <div style="color: red;">
+                                @foreach ($errors->all() as $error)
+                                    <p class="text-center">{{ $error }}</p>
+                                @endforeach
+                            </div>
+                        @endif
+                        <form action="{{ url('/login') }}" method="post">
+                            @csrf
                             <div class="form-group">
-                                <input type="text" class="form-control" placeholder="USERNAME" required>
+                                <input type="text" class="form-control" placeholder="Username or Email" id="username"
+                                    name="username" value="{{ old('username') }}" required>
                             </div>
                             <div class="form-group">
-                                <input type="password" class="form-control" placeholder="PASSWORD" required>
+                                <input type="password" class="form-control" placeholder="Password" id="password"
+                                    name="password" required>
                             </div>
-                            <div class="form-group" style="margin-bottom: 5rem;">
-                                <p class="text-end" style="font-size: 10pt;"><a href="#"
+                            <div class="form-group" style="margin-bottom: 3rem;">
+                                <p class="text-end" style="font-size: 10pt;"><a href="{{ url('/forgot-password') }}"
                                         class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">forgot
-                                        password</a></p>
+                                        password?</a></p>
                             </div>
                             <button type="submit" class="btn btn-dark w-100 mb-3">LOGIN</button>
-                            <button type="submit" class="btn w-100">SIGN UP HERE</button>
+                            <a href="{{ url('/register') }}" type="submit" class="btn w-100">SIGN UP HERE</a>
+                            <div class="form-group" style="margin-top: 1rem;">
+                                <p class="text-center" style="font-size: 11pt;">Kamu bisa bergabung sebagai seller, dan
+                                    memasarkan produk di YourPlate!<br><a href="{{ url('/seller/register') }}"
+                                        class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Klik
+                                        disini untuk bergabung sebagai seller.</a></p>
+                            </div>
                             <section id="footer">
                                 <div class="p-4 d-flex justify-content-center align-items-center">
                                     <img src="{{ asset('images/cdginnary-logo.png') }}" style="width: 15px">

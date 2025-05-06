@@ -93,9 +93,7 @@
             <div class="col-sm-5 col-12 d-flex justify-content-center align-items-center p-0">
                 <div class="col-left text-center">
                     <div class="text-desc">
-                        <p class="font-logo">YourPlate menjadi solusi untuk memasarkan produk-produk yang
-                            ingin kamu jual. Tersedia fitur Chat agar penjual mudah berinterkasi dengan
-                            pembeli. Daftarkan akun-mu dan mulai bisnis bersama YourPlate!</p>
+                        <p class="font-logo">Yourplate empowers you to markert your food product with ease. Create your account, and connect with your buyers now!</p>
                     </div>
                     <img src="{{ asset('images/img-logo-bg.png') }}" style="width: 100%; z-index: 0;">
                     <h1 class="font-logo pt-5">Your Plate</>
@@ -107,39 +105,56 @@
                 <div class="login-container" style="width: 85%;">
                     <h5 class="text-center" style="margin-top: 1rem;">Start Your Business</h5>
                     <p class="text-center mb-4" style="font-size: 12pt">Please complete this field to join us!</p>
-                    <form>
+                    @if ($errors->any())
+                        <div style="color: red;">
+                            @foreach ($errors->all() as $error)
+                                <p class="text-center">{{ $error }}</p>
+                            @endforeach
+                        </div>
+                    @endif
+                    <form action="{{ url('/seller/register') }}" method="post">
+                        @csrf
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="FULLNAME" required>
+                                    <input type="text" class="form-control" placeholder="Fullname" id="fullname"
+                                        name="fullname" value="{{ old('fullname') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="E-MAIL" required>
+                                    <input type="email" class="form-control" placeholder="Email" id="email" name="email"
+                                    value="{{ old('email') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="PHONE NUMBER" required>
+                                    <input type="text" class="form-control" placeholder="Phone Number" id="phone"
+                                        name="phone" value="{{ old('phone') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="ADDRESS" required>
+                                    <input type="text" class="form-control" placeholder="Address" id="address"
+                                        name="address" value="{{ old('address') }}" required>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="USERNAME" required>
+                                    <input type="text" class="form-control" placeholder="Username" id="username"
+                                        name="username" value="{{ old('username') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="PASSWORD" required>
+                                    <input type="password" class="form-control" placeholder="Password" id="password"
+                                        name="password" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="RE-TYPE PASSWORD" required>
+                                    <input type="password" class="form-control" placeholder="Confirm Password"
+                                        id="password2" name="password2" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="DORMITORY ROOM" required>
+                                    <input type="text" class="form-control" placeholder="Dormitory Room (Optional)"
+                                        id="dorm" name="dorm" value="{{ old('dorm') }}">
                                 </div>
+                                <input type="hidden" class="form-control" id="role" name="role" value="2">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-dark w-100 mb-3 mt-4 p-2">CREATE SELLER ACCOUNT</button>
-                        <button type="submit" class="btn w-100">BACK</button>
+                        <a href="{{ url('/register') }}" type="submit" class="btn w-100">BACK</a>
                         <section id="footer">
                             <div class="p-4 d-flex justify-content-center align-items-center">
                                 <img src="{{ asset('images/cdginnary-logo.png') }}" style="width: 15px">

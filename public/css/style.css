@@ -5,7 +5,7 @@ body {
 }
 
 body main {
-    background-color: #FFF3E0;
+    background-color: #fff8ee;
 }
 
 .bg-cream {
@@ -42,6 +42,7 @@ body main {
     font-family: "Irish Grover", serif;
     font-weight: 400;
     font-style: normal;
+    font-size: 14pt;
 }
 
 .font-itim {
@@ -85,7 +86,7 @@ body main {
     background-color: #FFF3E0;
     border-radius: 50px;
     border: none;
-    padding: 3rem;
+    padding: 2rem;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -131,8 +132,59 @@ body main {
     transition: transform 0.3s ease-in-out;
 }
 
+.card-chat, .card-profile {
+    background-color: #FFF3E0;
+    border-radius: 15px;
+    border: none;
+}
+
+.card-roomchat {
+    border: none;
+    border-radius: 15px;
+    height: 535px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-roomchat .card-body {
+    flex: 1 1 auto; /* supaya card-body memenuhi tinggi yg ada */
+    overflow-y: auto; /* SCROLLING di Y axis */
+    padding: 15px;
+}
+
+.card-roomchat .card-footer {
+    border: none;
+}
+
+.card-roomchat .card-header {
+    background-color: #FFC37F;
+    border: none;
+    border-radius: 15px 15px 0 0;
+}
+
+.card-product2 {
+    background-color: #faedd8;
+}
+
+.card-product2 .text-elipsis {
+    max-width: 90%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-product3 {
+    transition: none !important;
+}
+
+.card-product3:hover {
+    transform: none !important;
+    cursor: default !important;
+}
+
 .card-product:hover {
     transform: scale(1.05);
+    cursor: pointer;
 }
 
 .card-product .card-body {
@@ -158,6 +210,23 @@ body main {
     height: auto;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+}
+
+.card-textchat {
+    background-color: #fff8ee;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    width: fit-content;
+    max-width: 80%;
+}
+
+.card-sender {
+    border-radius: 15px 15px 0 15px;
+    margin-left: auto;
+}
+
+.card-receiver {
+    border-radius: 15px 15px 15px 0;
 }
 
 .search {
@@ -212,6 +281,100 @@ body main {
 
 a:link {
     text-decoration: none
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-item .page-link {
+    border-radius: 10px;
+    background-color: #faedd8 !important;
+    border: none;
+    color: black;
+}
+
+.page-item.active .page-link {
+    background-color: #FFC37F !important;
+    color: white;
+}
+
+.page-item .prev-link,
+.page-item .next-link {
+    background-color: #fff8ee !important;
+    color: #FFC37F;
+}
+
+.page-item.disabled .prev-link,
+.page-item.disabled .next-link {
+    background-color: #fff8ee !important;
+    color: #ffd5a4;
+}
+
+
+/* 
+.page-item.disabled .page-link {
+    background-color: #ede2d0 !important;
+} */
+
+.imagereview-container {
+    width: 300px;
+    /* Sesuaikan ukuran sesuai kebutuhan */
+    height: 300px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagereview-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating input {
+    display: none;
+}
+
+.rating label {
+    font-size: 1.5rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating input:checked~label,
+.rating label:hover,
+.rating label:hover~label {
+    color: #ffc107;
+}
+
+.btn-optimatch {
+    background-color: #D9D9D9;
+    font-size: 16pt;
+}
+
+.resultOpt-container {
+    padding: 10px 20px;
+    width: fit-content;
+    background-color:#ffa43d;
+    color: white;
+}
+
+.resultOpt-container h5 {
+    margin: 0;
+}
+
+.card-resep2 {
+    padding: 1rem;
 }
 
 @media screen and (max-width: 768px) and (max-height: 900px) {

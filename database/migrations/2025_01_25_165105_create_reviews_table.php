@@ -19,6 +19,9 @@ return new class extends Migration
             $table->string('rvw_desc');
             $table->timestamps();
 
+            $table->string('rvw_usr_id');
+            $table->uuid('rvw_prd_id');
+
             $table->foreign('rvw_usr_id')->references('usr_id')->on('users');
             $table->foreign('rvw_prd_id')->references('prd_id')->on('products');
         });

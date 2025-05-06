@@ -25,6 +25,8 @@
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Irish+Grover&family=Itim&display=swap"
         rel="stylesheet">
 
+    <script src="https://cdn.jsdelivr.net/npm/tinymce@5/tinymce.min.js"></script>
+
     <style>
         body,
         html {
@@ -99,16 +101,15 @@
             <nav class="bg-dark text-white p-3 d-flex flex-column" style="width: 200px;">
                 <ul class="nav flex-column flex-grow-1">
                     <li class="nav-item" style="font-size: 24px">
-                        <a class="nav-link text-white {{ Request::is('Dashboard*') ? 'active-menu' : '' }}" href="/Dashboard">Dashboard</a>
+                        <a class="nav-link text-white {{ Request::is('meal*') ? 'active-menu' : '' }}"
+                            href="/meal">Recipe</a>
                     </li>
                     <li class="nav-item" style="font-size: 24px">
-                        <a class="nav-link text-white {{ Request::is('Meal*') ? 'active-menu' : '' }}" href="/Meal">Meal</a>
+                        <a class="nav-link text-white {{ Request::is('seller*') ? 'active-menu' : '' }}"
+                            href="/seller-list">Seller</a>
                     </li>
                     <li class="nav-item" style="font-size: 24px">
-                        <a class="nav-link text-white {{ Request::is('Profile*') ? 'active-menu' : '' }}" href="/Profile">Profile</a>
-                    </li>
-                    <li class="nav-item" style="font-size: 24px">
-                        <a class="nav-link text-white {{ Request::is('Settings*') ? 'active-menu' : '' }}" href="/Settings">Settings</a>
+                        <a class="nav-link text-white" href="/logout">Logout</a>
                     </li>
                 </ul>
             </nav>
@@ -119,6 +120,15 @@
             </div>
         </main>
     </div>
+    <script>
+        tinymce.init({
+            selector: 'textarea#ingredients, textarea#steps',
+            menubar: false,
+            plugins: 'lists link image',
+            toolbar: 'undo redo | bold italic | bullist numlist',
+            height: 300
+        });
+    </script>
 </body>
 
 </html>
